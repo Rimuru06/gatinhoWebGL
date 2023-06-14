@@ -50,7 +50,11 @@ export default class Shader {
     gl.bindVertexArray(vao);
 
     if (posAttribLoc != null && colorAttribLoc != null && dataBuffer != null) {
-      // TODO
+      // TODO Questão 1 foi aqui
+      var type = gl.FLOAT;
+      gl.bindBuffer(gl.ARRAY_BUFFER, dataBuffer);
+      gl.vertexAttribPointer(posAttribLoc, 2, type, false, 0, 0);
+      gl.vertexAttribPointer(colorAttribLoc, 3, type, false, 0, 0);
     }
 
     return vao;
