@@ -100,6 +100,8 @@ class Scene {
     gl.uniformMatrix4fv(this.matLoc, false, this.mat);
 
     // Q3) Implemente o comando dl.drawArrays adequado para o programa em questão
+
+    gl.drawArrays(gl.LINE_LOOP, 0, this.coords.length / 4);
   }
 }
 
