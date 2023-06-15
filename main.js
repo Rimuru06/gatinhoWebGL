@@ -87,6 +87,9 @@ class Scene {
     // - O gatinho deve ter altura e largura 1.0
     // - O gatinho deve começar a caminhada com a ponta do rabo na posição (1.0, -0.5)
     // - Quando a cabeça do gatinho atingir o final da área de desenho, o movimento deve ser reiniciado
+    mat4.identity( this.mat );
+    mat4.translate(this.mat, this.mat, [-0.5, -0.5, -0.5]);
+    mat4.scale(this.mat, this.mat, [10, 10, 10]);
   }
 
   draw(gl) {  
