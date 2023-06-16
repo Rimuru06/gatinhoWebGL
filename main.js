@@ -87,9 +87,14 @@ class Scene {
     // - O gatinho deve ter altura e largura 1.0
     // - O gatinho deve começar a caminhada com a ponta do rabo na posição (1.0, -0.5)
     // - Quando a cabeça do gatinho atingir o final da área de desenho, o movimento deve ser reiniciado
-    mat4.identity( this.mat );
-    mat4.translate(this.mat, this.mat, [-0.5, -0.5, -0.5]);
-    mat4.scale(this.mat, this.mat, [10, 10, 10]);
+
+    mat4.identity(this.mat);
+    mat4.scale(this.mat, this.mat, [1.125, 1.125, 1.125]);
+    mat4.translate(this.mat, this.mat, [this.delta, -0.5, 0]);
+    this.delta-=0.005;
+    if(this.delta<=-1){
+      this.delta=0;
+    }
   }
 
   draw(gl) {  
@@ -101,7 +106,7 @@ class Scene {
 
     // Q3) Implemente o comando dl.drawArrays adequado para o programa em questão
 
-    gl.drawArrays(gl.TRANGLES, 0, this.data.length/5);
+    gl.drawArrays(gl.TRIANGLES, 0, this.data.length/5);
   }
 }
 

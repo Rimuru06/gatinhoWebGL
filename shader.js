@@ -55,6 +55,8 @@ export default class Shader {
       gl.bindBuffer(gl.ARRAY_BUFFER, dataBuffer);
       gl.vertexAttribPointer(posAttribLoc, 2, type, false, 0, 0);
       gl.vertexAttribPointer(colorAttribLoc, 3, type, false, 0, 4*42);
+      gl.enableVertexAttribArray(posAttribLoc);
+      gl.enableVertexAttribArray(colorAttribLoc);
     }
 
     return vao;
