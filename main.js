@@ -101,7 +101,7 @@ class Scene {
 
     // Q3) Implemente o comando dl.drawArrays adequado para o programa em questão
 
-    gl.drawArrays(gl.LINE_LOOP, 0, this.coords.length / 4);
+    gl.drawArrays(gl.TRANGLES, 0, this.data.length/5);
   }
 }
 
